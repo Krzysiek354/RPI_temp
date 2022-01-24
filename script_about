@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#echo "#############################################"
+#echo "skrypt temperatura"
+while true
+do
+x=3
+# cat /sys/devices/w1_bus_master1/10-000803312a8d/temperature | read x
+x=$(more /sys/devices/w1_bus_master1/10-000803312a8d/temperature)
+x=$[x]
+echo " $x"  > odczyt
+echo "Temperatura = $x"
+done
+#echo "##############################################"
